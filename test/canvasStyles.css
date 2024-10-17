@@ -1,0 +1,250 @@
+
+.header {
+    background-color: transparent;
+    color: rgb(255, 122, 69);
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .edit-header {
+    color: #ff6f61;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+} 
+  
+/* Popup Container Styles */
+.popup-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  width: 200px;
+}
+
+/* Container for buttons aligned horizontally */
+.popup-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Take full width of parent */
+  gap: 10px;
+}
+
+/* Existing Popup Buttons */
+.popup-button {
+  flex: 1; /* Allow buttons to grow and shrink */
+  min-width: 40px; /* Minimum width */
+  max-width: 70px; /* Maximum width */
+  height: 40px;
+  background-color: #1c1c1c;
+  color: #ff6f61;
+  border: none;
+  border-radius: 25px;
+  padding: 8px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.popup-button img {
+  width: 100%;
+  height: 100%;
+  max-width: 20px;
+  max-height: 20px;
+  object-fit: contain;
+}
+
+.popup-button:hover {
+  background-color: #333;
+}
+
+.popup-button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.popup-button:disabled img {
+  filter: brightness(0) invert(1);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 300px) {
+  .popup-container {
+    padding: 5px 10px;
+  }
+
+  .popup-buttons {
+    gap: 5px;
+  }
+
+  .popup-button {
+    min-width: 30px;
+    height: 30px;
+    padding: 4px;
+  }
+
+  .popup-button img {
+    max-width: 15px;
+    max-height: 15px;
+  }
+}
+
+.column-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;  /* Changed from center to flex-start */
+  top: 50%;  /* Center vertically */
+  left: 0px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.472);
+  transform: translateY(-50%);  /* Center vertically */
+  gap: 15px;
+  background-color: #282828;
+  min-height: 45%;  /* Changed from height to min-height */
+  max-height: 60%;  /* Add a maximum height */
+  min-width: 100px;
+  max-width: 140px;
+  padding: 20px;
+  display: none;
+  z-index: 1000;
+  overflow-y: auto;
+  border: solid;
+  border-color: #ff6f61;
+  border-width: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 0;
+}
+
+.column-container.visible {
+  display: flex;
+}
+  
+  .column-close-button {
+    background-color: transparent;
+    color: #ff7762;
+    background-color: #282828;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+    border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 9px;
+    cursor: pointer;
+  }
+
+  .column-close-button:hover {
+    background-color: transparent;
+    border: solid;
+    border-color: #ff6f61;
+    border-width: 2px;
+  }
+  
+  .toggle-slider-button {
+    background-color: #f88a80;
+    color: #2a2a2a;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 15px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 700;
+  }  
+  .toggle-slider-button:hover {
+    background-color: transparent;
+    border: solid;
+    border-color: #ff6f61;
+    border-width: 2px;
+    color: #ff6f61;
+  }
+
+  .slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 8cap;
+    left: 50%;
+    transform: translateX(-0%);
+    z-index: 1006;
+    background-color: rgb(0, 0, 0);
+    padding: 0px;
+    border-radius: 10px;
+    width: 30%;  /* Full width */
+    height: 16px;  /* Height of the track */
+  }
+
+  /* For WebKit browsers (Chrome, Safari, Edge) */
+input[type="range"] {
+    -webkit-appearance: none;  /* Removes default styling */
+    appearance: none;
+    width: 70%;  /* Full width */
+    background: #000000;  /* Background color of the slider track */
+    border-radius: 5px;  /* Rounded corners */
+    outline: none;  /* Removes the blue outline when clicked */
+  }
+  
+  /* Custom Track */
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;  /* Adjust the height of the track */
+    background: transparent;  /* Background color of the track */
+    border-radius: 5px;
+  }
+  
+/* Custom Thumb (Handle) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    align-items: center;
+    justify-content: center;
+    width: 20%;  /* Increased width for better visibility */
+    height: 90%;  /* Increased height for better visibility */
+    background: #1b1b1b;  /* Thumb color */
+    border-radius: 10%;  /* Make it circular */
+    bottom: 100px;
+    cursor: pointer;  /* Change the cursor on hover */
+    border: 1px solid #ff6f61;  /* Add a border around the thumb */
+    transition: box-shadow 0.3s ease;  /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the thumb */
+  input[type="range"]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 15px 5px rgba(255, 100, 53, 0.8);  /* Increased glow on hover */
+  }
+  
+
+
+  
+ /*Animations */
+  /* Define the wiggle keyframes */
+  @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  /* Create a class that applies the wiggle animation */
+  .wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}

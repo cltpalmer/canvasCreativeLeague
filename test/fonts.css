@@ -1,0 +1,162 @@
+/* Fullscreen overlay */
+.font-overlay {
+position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: 70vh;
+  background-color: rgb(37, 37, 37); /* Dark semi-transparent background */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears above all other elements */
+  padding-top: 10px;
+  box-sizing: border-box;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+}
+  
+/* Container for font list */
+.font-list-container {
+    height: 75%; /* Scrollable */
+    overflow-y: auto;
+    width: 80%;
+    margin-top: -10%;
+    background-color: transparent; /* Background color for the list */
+    padding-bottom: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+  justify-content: center;
+    flex-direction: column;
+    border-bottom: #00000051;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    object-fit: contain;
+
+}
+  
+/* Individual font options */
+.font-option {
+    padding: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    height: 2%;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+    border-radius: 60px;
+    background-color: #f88a80;
+    box-shadow: rgba(2, 0, 0, 0.172);
+    color: #000000; /* Text color to make sure it's visible */
+    transition: background-color 0.3s ease;
+}
+  
+/* Hover effect on font options */
+.font-option:hover {
+    background-color: #f0f0f0;
+}
+  
+/* Sticky Select Button at the bottom of the overlay */
+.font-select-button {
+    position: fixed;
+    bottom: 30px;
+    background-color: #22222262;
+    color: #f88a80;
+    font-weight: 700;
+    padding: 3px 3px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+  justify-content: flex-end;
+    width: 100px;
+    height: 10%;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.font-select-button:hover {
+    background-color: #0000009d;
+}
+
+
+/* Hide scrollbar for Chrome, Safari, and newer versions of Edge */
+.font-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.font-list-container {
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Internet Explorer, Edge */
+.font-list-container {
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+
+
+
+
+/* Applying different fonts throughout the application */
+
+/* Use Roboto as the default font for the entire body */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Apply Open Sans for headers */
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Set Poppins for buttons */
+.button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Use the bold version */
+}
+
+/* Use Playfair Display for block quotes */
+blockquote {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Custom styles for text elements with specific fonts */
+.subtitle {
+    font-family: 'Lato', sans-serif;
+}
+
+.header-title {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.quote {
+    font-family: 'Raleway', sans-serif;
+}
+
+.alert-text {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* Example using Karla for input fields */
+input, textarea {
+    font-family: 'Karla', sans-serif;
+}
+
+/* Example for other fonts */
+.footer-text {
+    font-family: 'Nunito', sans-serif;
+}
+
+.special-heading {
+    font-family: 'Oswald', sans-serif;
+}
